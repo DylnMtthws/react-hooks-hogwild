@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "./Nav";
-import DisplayContainer from './DisplayContainer'
+import DisplayContainer from "./DisplayContainer";
 import hogs from "../porkers_data";
 
 function App() {
-	return (
-		<div className="App">
-			<Nav />
-			<DisplayContainer/>
-		</div>
-	);
+  const [hogData, setHogData] = useState(hogs);
+
+  return (
+    <div className="App">
+      <Nav />
+      <DisplayContainer hogData={hogData} />
+    </div>
+  );
 }
 
 export default App;
